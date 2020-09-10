@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--oMDB Search-->
+        <scene sceneID="AZj-Vu-CrP">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="4lh-oT-cmC" customClass="MainViewController" customModule="omdbapiSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YBn-Ov-UZX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Ara" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-SF-E2H">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4lh-oT-cmC" id="rKU-1C-FkH"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jS8-d1-K6v">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SaG-61-YOY">
+                                    <size key="itemSize" width="175" height="161"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="Fdo-cC-UPc" customClass="MovieCell" customModule="omdbapiSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aIp-FX-E2N">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="161"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zIX-Rb-Wz3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="143"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-b0-gXu">
+                                                    <rect key="frame" x="0.0" y="145" width="175" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gxn-b0-gXu" secondAttribute="trailing" id="ZVE-52-5oN"/>
+                                                <constraint firstAttribute="trailing" secondItem="zIX-Rb-Wz3" secondAttribute="trailing" id="b1T-qz-scA"/>
+                                                <constraint firstItem="zIX-Rb-Wz3" firstAttribute="top" secondItem="aIp-FX-E2N" secondAttribute="top" id="bAy-Oh-DI0"/>
+                                                <constraint firstAttribute="bottom" secondItem="gxn-b0-gXu" secondAttribute="bottom" id="ge6-xF-Dqg"/>
+                                                <constraint firstItem="zIX-Rb-Wz3" firstAttribute="leading" secondItem="aIp-FX-E2N" secondAttribute="leading" id="qkb-qW-YBA"/>
+                                                <constraint firstItem="gxn-b0-gXu" firstAttribute="leading" secondItem="aIp-FX-E2N" secondAttribute="leading" id="wLx-ef-Cwh"/>
+                                                <constraint firstItem="gxn-b0-gXu" firstAttribute="top" secondItem="zIX-Rb-Wz3" secondAttribute="bottom" constant="2" id="yQb-9t-fNy"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="175" height="161"/>
+                                        <connections>
+                                            <outlet property="content_image" destination="zIX-Rb-Wz3" id="t1F-l3-7AL"/>
+                                            <outlet property="content_title" destination="gxn-b0-gXu" id="kmM-H9-RfN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4lh-oT-cmC" id="0wi-La-NaH"/>
+                                    <outlet property="delegate" destination="4lh-oT-cmC" id="0N0-P5-dg7"/>
+                                </connections>
+                            </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-2d-V3Q">
+                                <rect key="frame" x="107" y="388" width="200" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-D7-hPe">
+                                        <rect key="frame" x="0.0" y="20" width="180" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie not found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGc-mX-pOC">
+                                        <rect key="frame" x="0.0" y="80" width="200" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ORC-sP-Gnv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.1047998716" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QGc-mX-pOC" secondAttribute="trailing" id="MQK-KS-yTw"/>
+                                    <constraint firstAttribute="width" constant="200" id="WmR-Qa-QZi"/>
+                                    <constraint firstItem="Ch8-D7-hPe" firstAttribute="leading" secondItem="K0K-2d-V3Q" secondAttribute="leading" id="Xfi-AR-V2e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ch8-D7-hPe" secondAttribute="trailing" constant="20" symbolic="YES" id="YRz-8Q-8Vc"/>
+                                    <constraint firstAttribute="height" constant="120" id="ZLV-dO-otj"/>
+                                    <constraint firstItem="Ch8-D7-hPe" firstAttribute="top" secondItem="K0K-2d-V3Q" secondAttribute="top" constant="20" id="iPH-wS-JGd"/>
+                                    <constraint firstAttribute="bottom" secondItem="QGc-mX-pOC" secondAttribute="bottom" constant="20" id="tt8-Kg-I4i"/>
+                                    <constraint firstItem="QGc-mX-pOC" firstAttribute="leading" secondItem="K0K-2d-V3Q" secondAttribute="leading" id="yNw-FT-fL8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QU5-5M-Ylg" firstAttribute="bottom" secondItem="jS8-d1-K6v" secondAttribute="bottom" id="9Iz-WT-cSw"/>
+                            <constraint firstItem="jX9-SF-E2H" firstAttribute="leading" secondItem="QU5-5M-Ylg" secondAttribute="leading" id="WyC-3b-f82"/>
+                            <constraint firstItem="jX9-SF-E2H" firstAttribute="trailing" secondItem="QU5-5M-Ylg" secondAttribute="trailing" id="e2d-dl-f7k"/>
+                            <constraint firstItem="jS8-d1-K6v" firstAttribute="top" secondItem="jX9-SF-E2H" secondAttribute="bottom" id="fvN-la-GV1"/>
+                            <constraint firstItem="jX9-SF-E2H" firstAttribute="top" secondItem="QU5-5M-Ylg" secondAttribute="top" id="hCi-yP-a3Q"/>
+                            <constraint firstItem="K0K-2d-V3Q" firstAttribute="centerY" secondItem="YBn-Ov-UZX" secondAttribute="centerY" id="hi9-yR-m0H"/>
+                            <constraint firstItem="jS8-d1-K6v" firstAttribute="leading" secondItem="QU5-5M-Ylg" secondAttribute="leading" id="i0i-Uu-uxi"/>
+                            <constraint firstItem="K0K-2d-V3Q" firstAttribute="centerX" secondItem="YBn-Ov-UZX" secondAttribute="centerX" id="j9k-TD-9yU"/>
+                            <constraint firstItem="QU5-5M-Ylg" firstAttribute="trailing" secondItem="jS8-d1-K6v" secondAttribute="trailing" id="mT7-Ut-iec"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QU5-5M-Ylg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="oMDB Search" id="aCW-7p-6hB"/>
+                    <connections>
+                        <outlet property="collectionView" destination="jS8-d1-K6v" id="bIl-sZ-8IR"/>
+                        <outlet property="notFoundView" destination="K0K-2d-V3Q" id="Qyj-7B-5Vd"/>
+                        <outlet property="searchBar" destination="jX9-SF-E2H" id="636-KL-KK2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGp-zd-7NJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="95"/>
+        </scene>
+    </scenes>
+</document>
